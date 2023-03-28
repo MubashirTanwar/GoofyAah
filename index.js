@@ -77,22 +77,76 @@ for(var i = 0; i<keys; i++)
         buttonAnimation(innerText);
     });
 }
-var backgrounds = [
-    "url(background/backdrop.webp)",
-    "url(background/goof-1.png)",
-    "url(background/goof-2.png)",
-    "url(background/good-3.png)",
-    "url(background/goof-4.png)"
-  ];
+// var backgrounds = [
+//     "url(background/backdrop.webp)",
+//     "url(background/goof-1.png)",
+//     "url(background/goof-2.png)",
+//     "url(background/goof-3.jpg)",
+//     "url(background/goof-4.jpg)"
+//   ];
   
-var randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-document.body.style.backgroundImage = randomBg;
+//   var randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+//   document.body.style.backgroundImage = randomBg;
+// console.log(randomBg)
+  
 
-navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function(stream) {
-        var video = document.getElementById('video-background');
-        video.srcObject = stream;
-      })
-      .catch(function(error) {
-        console.log('Unable to access the webcam: ' + error.message);
-      });
+var videoOn = false;
+var videoElement = document.getElementById("video");
+var stream = null;
+var randomBg = null;
+
+var backgrounds = [
+  "url(background/backdrop.webp)",
+  "url(background/goof-1.png)",
+  "url(background/goof-2.png)",
+  "url(background/goof-3.jpg)",
+  "url(background/goof-4.jpg)"
+];
+
+function setBackground(bgUrl) {
+  document.body.style.backgroundImage = bgUrl;
+}
+
+function startCamera() {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(mediaStream) {
+      stream = mediaStream;
+      videoElement.srcObject = stream;
+      videoElement.style.display = "block";
+      setBackground("none");
+      videoOn = true;
+    })
+    .catch(function(error) {
+      console.error("Could not access webcam: " + error);
+    });
+}
+
+function stopCamera() {
+  stream.getTracks().forEach(function(track) {
+    track.stop();
+  });
+  videoElement.srcObject = null;
+  videoElement.style.display = "none";
+  setBackground(randomBg);
+  videoOn = false;
+}
+// document.getElementById("camera-toggle").querySelector("i").style.color = "#ff0000";
+
+document.getElementById("camera-toggle").addEventListener("click", function() {
+  if (videoOn) {
+    stopCamera();
+    document.getElementById("camera-toggle").classList.add("active");
+    document.getElementById("camera-toggle").querySelector("i").classList.remove("fa-video");
+    document.getElementById("camera-toggle").querySelector("i").classList.add("fa-video-slash");
+    document.getElementById("camera-toggle").querySelector("i").style.color = "#fff";
+  } else {
+    startCamera();
+    document.getElementById("camera-toggle").classList.remove("active");
+    document.getElementById("camera-toggle").querySelector("i").classList.remove("fa-video-slash");
+    document.getElementById("camera-toggle").querySelector("i").classList.add("fa-video");
+    document.getElementById("camera-toggle").querySelector("i").style.color = "#00ff00";
+  }
+});
+
+randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+setBackground(randomBg);
