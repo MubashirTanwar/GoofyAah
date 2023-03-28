@@ -174,3 +174,12 @@ footer {
 }
 
 /* M E D I A   Q U E R I E S  */
+/* M E D I A   Q U E R I E S  */
+@media (max-width: 767px) {
+  #camera-toggle {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+}
+
