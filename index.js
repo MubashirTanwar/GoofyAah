@@ -87,3 +87,12 @@ var backgrounds = [
   
 var randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 document.body.style.backgroundImage = randomBg;
+
+navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        var video = document.getElementById('video-background');
+        video.srcObject = stream;
+      })
+      .catch(function(error) {
+        console.log('Unable to access the webcam: ' + error.message);
+      });
