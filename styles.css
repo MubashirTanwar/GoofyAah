@@ -1,3 +1,189 @@
+/* body {
+  text-align: center;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 5rem;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+footer {
+  color: #DBEDF3;
+  font-family: sans-serif;
+}
+
+.w {
+  background-image: url(images/augh.png);
+  background-size: cover;
+}
+
+.a {
+  background-image: url(images/danger.png);
+
+}
+
+.s {
+  background-image: url(images/eh-eh-ehh.jpg);
+  background-size: cover;
+}
+
+.d {
+  background-image: url(images/fart.jpg);
+
+}
+.f {
+  background-image: url(images/huh.png);
+
+}
+.g {
+  background-image: url(images/omg.jpg);
+
+}
+.h {
+  background-image: url(images/piano-riff.png);
+
+}
+
+.j {
+  background-image: url(images/quandale-dingle.png);
+
+}
+
+.k {
+  background-image: url(images/raar.jpg);
+
+}
+
+.l {
+  background-image: url(images/samsung.jpg);
+
+}
+.n {
+  background-image: url(images/vineboom.png);
+
+}
+
+.m {
+  background-image: url(images/violin-screech.png);
+
+}
+
+.set {
+  margin: 10% auto;
+}
+
+
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+
+}
+
+.red {
+  color: red;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .row:first-child {
+    justify-content: flex-start;
+    margin-left: 300px;
+  }
+  .row:last-child
+  {
+    justify-content: flex-end;
+    margin-right: 350px;
+
+  }
+  
+  
+  .w {
+    align-self: flex-end;
+  }
+  
+  .n, .m {
+    margin-left: 550px;
+  }
+  
+.tap {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 3rem;
+  font-family: 'comic-sans', cursive;
+  -webkit-text-fill-color: rgba(55, 63, 55, 0);
+  line-height: 2;
+  font-weight: 700;
+  border-radius: 15px;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  margin: 5px;
+  background-color: white;
+  background-size: cover;
+}
+#video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transform: scaleX(-1);
+  background-color: transparent;
+
+}
+#camera-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#camera-toggle.active {
+  background-color: #f00;
+}
+
+#camera-toggle.active i {
+  color: #fff;
+}
+
+#camera-toggle i {
+  font-size: 24px;
+  color: #00ff00; 
+}
+
+/* M E D I A   Q U E R I E S  */
+
+/* @media only screen and (max-width: 1100px) {
+  #camera-toggle {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+      bottom: 80px;
+  right: 80px;
+}
+}  */
 body {
   text-align: center;
   background-size: cover;
