@@ -106,6 +106,7 @@ var backgrounds = [
 function setBackground(bgUrl) {
   document.body.style.backgroundImage = bgUrl;
 }
+document.body.style.backgroundSize=`${window.innerWidth}px ${window.innerHeight}px`;
 
 function startCamera() {
   navigator.mediaDevices.getUserMedia({ video: true })
